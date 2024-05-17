@@ -14,7 +14,7 @@ In this example we will follow the following steps
 5. Retrain the model
 
 ## Pre-requiste
-Fo thsi I am using local machine (Macbook Pro with 32GB RAM) but you can spin up g5.4xlarge machine on AWS
+For this tutorial I am using local machine (Macbook Pro with 32GB RAM) but you can spin up g5.4xlarge machine on AWS
 
 Instructlab requires ~18GB of GPU memory, which most of the times requires a data-center server — but alternatively it could be a Jupyter Notebook, Google Collab, Kaggle — or any other type of IDE that you’d like to use to fine-tune the model. We are using a very small sample
 
