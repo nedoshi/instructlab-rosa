@@ -24,16 +24,19 @@ Instructlab requires ~18GB of GPU memory, which most of the times requires a dat
 ## Tutorial
 
 1. Clone the taxonomy repository:
+
 ```
 git clone --recurse-submodules https://github.com/instructlab/instructlab.git
 ```
 
 2. Now init the ilab CLI to and use it to clone the taxonomy repository:
-
+```
+source venv/bin/activate
+```
 ```
 ilab init
 ```
-#### Output
+##### Output
 ```
 Welcome to InstructLab CLI. This guide will help you set up your environment.
 Please provide the following values to initiate the environment [press Enter for defaults]:
@@ -46,9 +49,7 @@ Path to taxonomy repo [taxonomy]: <ENTER>
 ilab download --repository instructlab/granite-7b-lab-GGUF --filename granite-7b-lab-Q4_K_M.gguf
 ```
 
-4. The LLM is basically being downloaded from HuggingFace into your local directory, it should be found in the models directory under your current directory context.
-
-Let’s serve it locally so that we’ll be able to interact with it.
+4. The LLM is basically being downloaded from HuggingFace into your local directory, it should be found in the models directory under your current directory context. Let’s serve it locally so that we’ll be able to interact with it.
 
 ```
  ilab serve --model-path models/granite-7b-lab-Q4_K_M.gguf --num-threads 14
@@ -97,7 +98,7 @@ ilab generate --model granite-7b-lab-Q4_K_M
 INFO 2024–05–10 23:07:05,280 generate_data.py:468 Selected taxonomy path compositional_skills->writing->freeform->rosa
 ```
 
-### Output
+##### Output
 
 ```
 Q> What is the purpose of the `rosaclassic-setup` command in the ROSA Classic deployment?
@@ -119,10 +120,7 @@ train_granite-7b-lab-Q4_K_M_2024-05-17T14_00_27.jsonl
 train_granite-7b-lab-Q4_K_M_2024-05-17T15_17_03.jsonl
 ```
 
-7. Train the LLM with generated Dataset
-
-```
-
+7. Train the LLM with generated Dataset.
 Now that we’re done and the dataset is generated, notice that you have a few files created under your current context that are being used is the training and testing phases. If you have NVIDIA GPU then you can specify device.
 
 ```
@@ -134,7 +132,7 @@ OR on Macbook (takes a long time and it can fail if not enough resources)
 ```
 ilab train --gguf-model-path models/granite-7b-lab-Q4_K_M.gguf
 ```
-### Output
+##### Output
 ```
 (venv) nerav@nedoshi-mac instructlab % ilab train --gguf-model-path models/granite-7b-lab-Q4_K_M.gguf
 Found multiple files from `ilab generate`. Using the most recent generation.
@@ -154,8 +152,10 @@ model-00002-of-00003.safetensors:   1%|█▉                                   
 ```
 8. Once the training was finished, you should expect to have the new GGUF model under that model path (which in our case is the models directory).
 
-Note: You can Quantize the Fine-Tuned LLM model.(Optional step). Quantization is a technique used to reduce the size of neural networks, including LLMs, by modifying the precision of their weights. Instead of using full precision (e.g., 32-bit floating point), quantization reduces the weights to lower bit precision (e.g., 8-bit, 4-bit, or even lower).
-The goal is to make the model more memory-efficient and suitable for deployment on consumer hardware. Example [github](https://github.com/ggerganov/llama.cpp/tree/master/examples/quantize) for reference
+  Note: You can Quantize the Fine-Tuned LLM model.(Optional step). Quantization is a technique used to reduce the size of neural networks, including LLMs, by modifying the precision of their weights. 
+  Instead of using full precision (e.g., 32-bit floating point), quantization reduces the weights to lower bit precision (e.g., 8-bit, 4-bit, or even lower).
+  The goal is to make the model more memory-efficient and suitable for deployment on consumer hardware. Example [github](https://github.com/ggerganov/llama.cpp/tree/master/examples/quantize) for 
+  reference
 
 9. Test The Fine-Tuned LLM
 
