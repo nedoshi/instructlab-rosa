@@ -1,0 +1,52 @@
+task_description: 'Teach the model about deployment of ROSA classic STS cluster'
+created_by: Nerav Doshi
+seed_examples:
+  - question: What is Red Hat OpenShift Service on AWS (ROSA)?
+    answer: |
+      Red Hat OpenShift Service on AWS (ROSA) is a fully-managed and jointly supported Red Hat OpenShift |
+      offering that combines the power of Red Hat OpenShift, the industry’s most comprehensive enterprise |
+      Kubernetes platform, and the AWS public cloud.
+  - question: Where can I go to get more information/details?
+    answer: |
+      ROSA_url: https://www.openshift.com/products/amazon-openshift
+      ROSA_link: [ROSA Webpage, ROSA_url]
+      ROSA_doc_url: https://docs.openshift.com/rosa/welcome/index.html
+      ROSA_doc_link: [ROSA Documenation, ROSA_doc_url]
+  - question: When will ROSA be GA?
+    answer: |
+      Red Hat OpenShift Service on AWS is GA as of March 2021.
+  - question: What are the benefits of Red Hat OpenShift Service on AWS (Key Features)?
+    answer: |
+      - Native AWS service: Access and use Red Hat OpenShift on demand with a self-service |
+        on-boarding experience through the AWS management console.
+      - Flexible, consumption-based pricing: Scale as per your business needs and pay as you |
+        go with flexible pricing with an on-demand hourly or annual billing model.
+      - Single invoice for Red Hat OpenShift & AWS usage:  Customers will receive a single bill |
+        from AWS for both Red Hat OpenShift and AWS consumption.
+      - Fully integrated support experience: Installation, management, maintenance, |
+        and upgrades are performed by Red Hat site reliability engineers (SRE) with joint
+      - Red Hat and Amazon support and a 99.95% SLA.
+      - AWS service integration: AWS has a robust portfolio of cloud services, such as compute, |
+        storage, networking, database, analytics, and machine learning, which are directly accessible |
+          via Red Hat OpenShift Service on AWS. This makes it easier to build, operate, and scale globally |
+            on demand through a familiar management interface.
+  - question: What are additional key features of Red Hat OpenShift Service on AWS?
+    answer: |
+      - Maximum Availability: Deploy clusters across multiple Availability Zones in supported Regions|
+        to maximize availability to maintain high availability for your most demanding |
+          mission-critical applications and data.
+      - Cluster node scaling: Easily add or remove compute nodes to match resource demand.
+      - Optimized clusters: Choose from memory-optimized, compute-optimized, or general purpose EC2 instance types, |
+        with clusters sized to meet your needs.
+      - Global availability: Please refer to the product regional availability page for an up-to-date view of where |
+        Red Hat OpenShift Service on AWS is available.
+  - question: Which compliance certifications does ROSA have so far?
+    answer: |
+      Red Hat OpenShift Service on AWS is currently compliant with SOC-2 type 2, SOC 3, ISO-27001, |
+        ISO 27017, ISO 27018, HIPAA & PCI.
+  - question: Is the SRE access to clusters secured by Multi-Factor Authentication (MFA)?
+    answer: |
+      Yes, all SRE access is secured by MFA.
+  - question: Which IAM mode is recommended to use when creating a ROSA cluster?
+    answer: Choose Security Token Service (STS) mode that provides short-lived credentials for improved security. |
+      The roadmap is focused on STS and non-STS will eventually be deprecated.

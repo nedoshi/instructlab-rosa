@@ -1,0 +1,4 @@
+Title of work: Creating a ROSA cluster with PrivateLink enabled (custom VPC) and STS
+Link to work: https://docs.openshift.com/rosa/rosa_install_access_delete_clusters/rosa-aws-privatelink-creating-cluster.html
+License of the work: CC-BY-SA-4.0
+Creator names: Red Hat
